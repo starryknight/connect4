@@ -1,5 +1,4 @@
 
-
 body {
     display: grid;
   grid-template-columns: 20% 50% 20%%;
@@ -111,7 +110,7 @@ img {
 }
 
 .row {
-    box-sizing: border-box;
+    box-sizing: 
 }
 #newGame {
     grid-column-start: 2;
@@ -123,6 +122,10 @@ img {
     background-color: white;
     font-size: 150%;
     color: black;
-    margin: 50px 0px 130px 200px;
-    
+    margin: 50px 0px 110px 200px;
+}
+#newGame:hover {
+    cursor: pointer;
+    background-color: rgb(0, 60, 255);
+    color: rgb(255, 0, 89);
 }
