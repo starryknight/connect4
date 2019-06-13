@@ -89,9 +89,27 @@ img {
 #game {
     grid-column-start: 2;
     grid-row-start: 4;
-    width: 500px;
-    height: 400px;
+    width: 555px;
+    height: 510px;
     margin: auto;
     background-color: rgb(255, 238, 0);
     border: 5px solid black;
+}
+.cell {
+    border: 5px solid white;
+    border-radius: 50%;
+    margin: 2px;
+    width: 65px;
+    height: 65px;
+    float: left;
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'Chewy', cursive;
+    font-size: 800%;
+    color: #b2ffb2;
+    background-color: black;
+}
+
+.row {
+    box-sizing: border-box;
 }
