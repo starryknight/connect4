@@ -1,10 +1,47 @@
 
 body {
     display: grid;
-  grid-template-columns: 20% 50% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-columns: 20% 60% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20% 60%;
   background-image: url("https://wallpaperaccess.com/full/151205.jpg")
 }
+
+
+#board {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    height: 620px;
+    margin: auto;
+	background-color: rgb(255, 238, 0);
+	width: 605px;
+    cursor: pointer;
+    border: 5px solid black;
+    border-radius: 3%;
+    
+}
+
+.column {
+    width: 80px;
+	display: inline-block;
+}
+
+.column:hover  circle.free{
+	fill: #D5E4ED;
+}
+
+circle.free {
+	fill: #fff;
+}
+
+circle.blue {
+	fill: blue;
+}
+
+circle.red {
+	fill: red;
+}
+
+
 
 h1 {
     grid-column-start: 2;
@@ -83,47 +120,23 @@ img {
     background-color: black;
     line-height: 85px;
     font-size: 50px;
-}
+} 
 
-#game {
-    grid-column-start: 2;
-    grid-row-start: 4;
-    width: 555px;
-    height: 510px;
-    margin: auto;
-    background-color: rgb(255, 238, 0);
-    border: 5px solid black;
-}
-.cell {
-    border: 5px solid white;
-    border-radius: 50%;
-    margin: 2px;
-    width: 65px;
-    height: 65px;
-    float: left;
-    padding-top: 5px;
-    text-align: center;
-    font-family: 'Chewy', cursive;
-    font-size: 800%;
-    color: #b2ffb2;
-    background-color: black;
-}
-
-.row {
-    box-sizing: 
-}
-
-#newGame {
+.buttons {
     grid-column-start: 2;
     grid-row-start: 5;
+    margin: 50px 0px 50px 290px;
+}
+#newGame {
+     
     width: 140px;
     height: 40px;
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 5px;
     background-color: white;
     font-size: 150%;
     color: black;
-    margin: 50px 0px 110px 200px;
+    
 }
 #newGame:hover {
     cursor: pointer;
