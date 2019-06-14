@@ -16,7 +16,7 @@
 			
 			Array.prototype.forEach.call(columns, function(col) {
 				col.addEventListener('click', function() {
-					markNextFree(col.getAttribute('data-x'));
+					markNextFree(col.getAttribute('x'));
 				});
 			});
 			
