@@ -150,7 +150,12 @@ $(document).ready(function() {
 	ConnectFour();
 
 
-
+   //reset button on home page
+   $('.buttons').click(function(){
+	$('circle.blue').removeClass('blue');
+	$('circle.red').removeClass('red');
+	
+	
 });
 	
 });
