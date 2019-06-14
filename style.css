@@ -1,7 +1,7 @@
 
 body {
     display: grid;
-  grid-template-columns: 20% 50% 20%%;
+  grid-template-columns: 20% 50% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
   background-image: url("https://wallpaperaccess.com/full/151205.jpg")
 }
@@ -112,6 +112,7 @@ img {
 .row {
     box-sizing: 
 }
+
 #newGame {
     grid-column-start: 2;
     grid-row-start: 5;
