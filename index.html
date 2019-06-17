@@ -8,171 +8,32 @@
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.js"></script>
     <script src="js/project.js"></script>
+
 </head>
+
 <body>
     <h1></h1>
     <img src="http://shufflecardgames.com/assets/images/licenses/connect4/header_logo.png">
+    
     <div id='player1'>
-        <div class='playerName'>Player 1</div>
+        <div class='playerName'>Blue</div>
             <div class="score">0</div>
     </div>
 
-    
+    <div class="buttons">
+        <div id="current-player"></div>
+        <button id="reset">Reset</button>
+    </div>
     <div id='player2'>
-        <div class='player2Name'>Player 2</div>
+        <div class='player2Name'>Red</div>
             <div class="score2">0</div>
     </div>
 
-
-
-
-
-    <div id="board">
-                <div class="column" id="column-0" x="0">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-1" x="1">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-2" x="2">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-3" x="3">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-4" x="4">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-5" x="5">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-                <div class="column" id="column-6" x="6">
-                  <svg height="100" width="100" class="row-5">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-4">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-3">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-2">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-1">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                  <svg height="100" width="100" class="row-0">
-                                <circle cx="50" cy="50" r="35" stroke="black" stroke-width="5" class="free" />
-                              </svg>
-                </div>
-              </div>
-
-
-        <div class="buttons">
-                <button id="newGame">New Game</button>
-
-</body>
+    <div class="upper">
+         <div class="board">
+           <div class="container"></div>
+         </div>
+         </div>
+     </div>
+ </body>
 </html>
