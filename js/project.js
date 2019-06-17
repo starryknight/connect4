@@ -2,8 +2,10 @@ jQuery(function() {
 
   //reset button
   $('#reset').click(function(){
-      $('.circle').removeClass('blue');
-      $('.circle').removeClass('red');
+      $('.red').addClass('circle');
+	  $('.blue').addClass('circle');
+	  $('.circle').removeClass('red');
+	  $('.circle').removeClass('blue');
 	  $('.circle').text().replace('');
   });
 
@@ -267,8 +269,8 @@ playGame();
         setTimeout(fillAvailableSlots, 2000);
     }
 
-    /*this function check if the game was a tie, so it scan all rows and columns
-     *it looks for classes blue and/or red and count how many of them there are in the array (var counter)
+	/* Checking for tie game
+	   Scans rows and columns for Arrays
      */
     var checkTiedGame = function(array) {
         var counter = 0;
@@ -284,7 +286,7 @@ playGame();
         if (counter === 30) {
           console.log('checkTiedGame---> if statement')
           setTimeout(function(){
-            alert ('Try again!!!');
+            alert ('Tie!!!');
           }, 250);
         }
     }
@@ -338,7 +340,7 @@ playGame();
           }
         }
 
-        //scan diagonals
+        //scan diagonal
         for (var i = 0; i < 2; i++) {
             for (var j = 0; j < 3; j++) {
                 //if statement = blue completes a diagonal of 4 in a row
@@ -363,5 +365,8 @@ playGame();
         }
     }
 
+	/* Score Variables */
+var player1Score = 0;
+var player2Score = 0;
 
 });
