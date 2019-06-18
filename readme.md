@@ -9,3 +9,17 @@ Project board link:
 https://trello.com/b/cGeeGILm/connect-4
 
 Deploy link:
+https://connect4km.netlify.com
+
+<h2>
+About Game
+</h2>
+
+<h2>
+Issues List
+</h2>
+1. Connecting scores to wins
+    - unsolved
+2. Resetting game board.
+    - Kept turning game spots black... not resetting
+    - Had to remove board spot's new color THEN replace it with original color
