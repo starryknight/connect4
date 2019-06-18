@@ -18,8 +18,8 @@ About Game
 <h2>
 Issues List
 </h2>
-1. Connecting scores to wins
-    - unsolved
+1. I had trouble connecting the scores to wins... UNSOLVED
+
 2. Resetting game board.
-    - Kept turning game spots black... not resetting
+- Kept turning game spots black... not resetting
     - Had to remove board spot's new color THEN replace it with original color
