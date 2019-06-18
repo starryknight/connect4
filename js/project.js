@@ -304,11 +304,11 @@ playGame();
             if (circles[i][j].hasClass('blue') && circles[i][j+1].hasClass('blue') && circles[i][j+2].hasClass('blue') && circles[i][j+3].hasClass('blue'))
             {
                 
-              // // var player1Score ++
-              //   player1Score ++
-              //    $('#player1 .score').val() = player1Score
-              //    console.log(player1Score)
-              //    console.log($('#player1 .score'))
+              // var player1Score ++
+                player1Score ++
+                 $('#player1 .score').val() = player1Score
+                 console.log(player1Score)
+                 console.log($('#player1 .score'))
 
 
               console.log('checkWinner ---> if statement')
