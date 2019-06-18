@@ -28,7 +28,6 @@ jQuery(function() {
      for (var j = 0; j < column; j++) {
           boardCircles[i][j] = $('<div>');
           boardCircles[i][j].addClass('circle');
-          // console.log('boardCircles -->', boardCircles[i][j]);
           $('.container').append(boardCircles[i][j]);
      }
   }
@@ -103,7 +102,7 @@ jQuery(function() {
                 var j = 2;
                 startPosition = 25+92*2;
                 endPosition = 25+92*2;
-                // console.log(left);
+
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -124,7 +123,7 @@ jQuery(function() {
                 var j = 3;
                 startPosition = 25+92*3;
                 endPosition = 25+92*3;
-                // console.log(left);
+
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -145,7 +144,7 @@ jQuery(function() {
                 var j = 4;
                 startPosition = 25+92*4;
                 endPosition = 25+92*4;
-                // console.log(left);
+
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -166,7 +165,7 @@ jQuery(function() {
                 var j = 5;
                 startPosition = 25+92*5;
                 endPosition = 25+92*5;
-                // console.log(left);
+
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -254,7 +253,7 @@ playGame();
     function fillAvailableSlots(column, color, numOfSlots) {
         var numOfSlots = 0;
         for (var i = 0; i < row; i++) {
-          console.log('varredura');
+          
             if(boardCircles[i][column].hasClass('circle')){
               numOfSlots += 1;
             }
@@ -290,15 +289,14 @@ playGame();
         }
     }
 
-    //this function check all the possible combinations to win the game
+    //checks all possible combinations for win 
     var checkForWinner = function(circles) {
-        // console.log('checkWinner');
-        // console.log(circles);
+
 
         //scan rows
         for (var j = 0; j < 3; j++) {
           for (var i = 0; i < row; i++) {
-            //if statement that checks if blue has a sequence in any row
+            //checks if blue has a sequence in rows
             if (circles[i][j].hasClass('blue') && circles[i][j+1].hasClass('blue') && circles[i][j+2].hasClass('blue') && circles[i][j+3].hasClass('blue'))
             {
                 
@@ -364,7 +362,7 @@ playGame();
                     }, 250);
                 }
                 //if statement = red completes a diagonal of 4 in a row
-                
+
                 if (circles[i][j].hasClass('red') && circles[i+1][j+1].hasClass('red') && circles[i+2][j+2].hasClass('red') && circles[i+3][j+3].hasClass('red')||
                     circles[i][j+3].hasClass('red') && circles[i+1][j+2].hasClass('red') && circles[i+2][j+1].hasClass('red') && circles[i+3][j].hasClass('red'))
                 {
