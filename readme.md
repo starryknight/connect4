@@ -30,6 +30,8 @@ Key Points
 - vertical connect
 - horizontal connect
 - diagonal connect
+- created divs for circles using js file instead of html like i did originally
+    -reference: @dkooreda
 
 <h2>
 Issues List
