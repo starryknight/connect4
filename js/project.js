@@ -58,14 +58,14 @@ jQuery(function() {
                 var d = 92;
                 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -82,14 +82,14 @@ jQuery(function() {
                 endPosition = 25+92;
                 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -104,14 +104,14 @@ jQuery(function() {
                 endPosition = 25+92*2;
 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -125,14 +125,14 @@ jQuery(function() {
                 endPosition = 25+92*3;
 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -146,14 +146,14 @@ jQuery(function() {
                 endPosition = 25+92*4;
 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -167,14 +167,14 @@ jQuery(function() {
                 endPosition = 25+92*5;
 
                 if (player === 1) {
-                    fillAvailableSlots(j, "blue");
+                    fillAvailableMoves(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
                     player += 1;
                     currentPlayer = $('#current-player').text("Player 2");
                     checkForWinner(boardCircles);
                     checkTiedGame(boardCircles);
                 } else {
-                    fillAvailableSlots(j, "red");
+                    fillAvailableMoves(j, "red");
                     move(j, startPosition, endPosition, "slide-red");
                     player = 1;
                     currentPlayer = $('#current-player').text("Player 1");
@@ -208,67 +208,67 @@ playGame();
         //append div container, represents the board
         $('.container').append(slideCircle);
 
-        //account for number of available slots on the board
-        var numOfSlots = 0;
+        //account for number of available moves on the board
+        var numOfMoves = 0;
         for (var i = 0; i < row; i++) {
             if(boardCircles[i][column].hasClass('.circle')){
-              numOfSlots += 1;
+              numOfMoves += 1;
             }
         }
 
-        /*if there are 5 available slots
+        /*if there are 5 available moves
         total height
          */
-        if (numOfSlots === 5) {
+        if (numOfMoves === 5) {
             slideCircle.animate({top: totalHeight, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
 
-        /*if there are 4 available slots
+        /*if there are 4 available moves
          total height minus 1 slot length ect.
          */
-        if (numOfSlots === 4) {
+        if (numOfMoves === 4) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
         
-        if (numOfSlots === 3) {
+        if (numOfMoves === 3) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs * 2, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
-        if (numOfSlots === 2) {
+        if (numOfMoves === 2) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs * 3, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
-        if (numOfSlots === 1) {
+        if (numOfMoves === 1) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs * 4, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
-        if (numOfSlots === 0) {
+        if (numOfMoves === 0) {
             slideCircle.fadeOut(50);
         }
     }
 
-    // function to scan rows of column and return number of available slots
-    function fillAvailableSlots(column, color, numOfSlots) {
-        var numOfSlots = 0;
+    // function to check rows of column and return number of available moves
+    function fillAvailableMoves(column, color, numOfMoves) {
+        var numOfMoves = 0;
         for (var i = 0; i < row; i++) {
           
             if(boardCircles[i][column].hasClass('circle')){
-              numOfSlots += 1;
+              numOfMoves += 1;
             }
         }
-        console.log('number of available slots', numOfSlots);
-        if (numOfSlots !== 0) {
-          boardCircles[numOfSlots-1][column].removeClass('circle');
-          boardCircles[numOfSlots-1][column].addClass(color);
+        console.log('number of available moves', numOfMoves);
+        if (numOfMoves !== 0) {
+          boardCircles[numOfMoves-1][column].removeClass('circle');
+          boardCircles[numOfMoves-1][column].addClass(color);
         }
 
-        setTimeout(fillAvailableSlots, 2000);
+        setTimeout(fillAvailableMoves, 2000);
     }
 
 	/* Checking for tie game
-	   Scans rows and columns for Arrays
+	   checks rows and columns for Arrays
      */
     var checkTiedGame = function(array) {
         var counter = 0;
@@ -280,7 +280,7 @@ playGame();
             }
         }
 
-        //if counter is equals to 30, which is the total number of slots on the grid, it will send an alert
+        //if counter is equals to 30, which is the total number of moves on the grid, it will send an alert
         if (counter === 30) {
           console.log('checkTiedGame---> if statement')
           setTimeout(function(){
@@ -293,7 +293,7 @@ playGame();
     var checkForWinner = function(circles) {
 
 
-        //scan rows
+        //check rows
         for (var j = 0; j < 3; j++) {
           for (var i = 0; i < row; i++) {
             //checks if blue has a sequence in rows
@@ -325,7 +325,7 @@ playGame();
           }
         }
 
-        //scan columns
+        //check columns
         for (var i = 0; i < 2; i++) {
           for (var j = 0; j < column; j++) {
             //if statement that check if blue has a sequence in any column
