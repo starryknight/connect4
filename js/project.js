@@ -15,6 +15,8 @@ jQuery(function() {
   var column = 6;
   var boardCircles = [];
   var players = [];
+  var player1Score = 0;
+  var player2Score = 0;
 
   
 
@@ -365,8 +367,5 @@ playGame();
         }
     }
 
-	/* Score Variables */
-var player1Score = 0;
-var player2Score = 0;
 
 });
