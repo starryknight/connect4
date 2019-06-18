@@ -15,14 +15,14 @@ jQuery(function() {
   var column = 6;
   var boardCircles = [];
   var players = [];
-  var player1Score = 0;
-  var player2Score = 0;
+  // var player1Score = 0;
+  // var player2Score = 0;
   
 
   // Player 1 start
   var currentPlayer =  $('#current-player').html("Player 1");
 
-  // Made board spots where index i represents rows and j represents columns
+  // Made board spots where index i means rows and j means columns
   for (var i = 0; i < row; i++) {
       boardCircles[i] = [];
      for (var j = 0; j < column; j++) {
@@ -35,14 +35,13 @@ jQuery(function() {
 
   var player = 1;
 
-  //this function was created to respond to a click event
+  //click event for circles
   var playGame = function() {
 
-    /*all elements with class "circle" has a click event
-     *when the player click on a particular element, it will return its index
-     *I noticed that the first column of the grid (board) has indexes that are multiple of 6*/
+    /*
+     *when player clicks on a element, it returns its index*/
+    // multiples of 6
     $('.circle').click(function() {
-        console.log('hi');
         var position = $(this).index();
         console.log('position clicked', position);
         var counter = 0;
@@ -50,16 +49,15 @@ jQuery(function() {
         var endPosition = 0;
 
 
-             /*so if the player click on a div from the first column,
-              *when it is divided by 6, it will get a remainder of 0,
-              which means that the player clicked on the 1st column */
+             /* if player clicks spot from 1st column its divided by 6 
+             it will equal 0 which means its on the 1st column */
             if(position % 6 === 0) {
                 console.log('if statement running');
                 var j = 0;
                 startPosition = 25;
                 endPosition = 25;
                 var d = 92;
-                // console.log(left);
+                
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -77,14 +75,13 @@ jQuery(function() {
                 }
               }
 
-               /*if the player click on a div from the second column,
-                *when it is divided by 6, it will get a remainder of 1,
-                which means that the player clicked on the 2nd column and so on*/
+               /* if player click spot from 2nd column its divided by 6 and will = 1,
+                player clicked 2nd column ect.*/
               if(position % 6 === 1) {
                 var j = 1;
                 startPosition = 25+92;
                 endPosition = 25+92;
-                // console.log(left);
+                
                 if (player === 1) {
                     fillAvailableSlots(j, "blue");
                     move(j, startPosition, endPosition, "slide-blue");
@@ -193,20 +190,23 @@ jQuery(function() {
 playGame();
 
 
-    //This function creates a div and slide it down on the board
+    //function for slide down
     function move(column, leftStart, leftEnd, color)  {
 
-        //total height of container = 350
+        //height of container = 350
         var totalHeight = 370;
         var distanceBtwDivs = 80;
-        //create a div
+
+        //jquery to make a div
         var slideCircle = $('<div>');
-        // slideCircle.addClass('slide-circle');
-        //add it a class of color
+       
+        //add a class of color
         slideCircle.addClass(color);
-        //set left position to it according to the argument given in the function
+
+        //set left to function
         slideCircle.css('left', leftStart);
-        //append this div to the container, which represents the board
+
+        //append div container, represents the board
         $('.container').append(slideCircle);
 
         //account for number of available slots on the board
@@ -217,24 +217,22 @@ playGame();
             }
         }
 
-        /*if there are 5 available slots then distance to slide piece down on the board
-         *will be total height of the container
+        /*if there are 5 available slots
+        total height
          */
         if (numOfSlots === 5) {
             slideCircle.animate({top: totalHeight, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
 
-        /*if there are 4 available slots then distance to slide piece down on the board
-         *will be total height of the container minus 1 slot lenght
+        /*if there are 4 available slots
+         total height minus 1 slot length ect.
          */
         if (numOfSlots === 4) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
         }
-        /*if there are 3 available slots then distance to slide piece down on the board
-         *will be total height of the container minus 2 slot lenght and so on...
-         */
+        
         if (numOfSlots === 3) {
             slideCircle.animate({top: totalHeight - distanceBtwDivs * 2, left: leftEnd}, 200);
             slideCircle.fadeOut(50);
@@ -252,7 +250,7 @@ playGame();
         }
     }
 
-    //this function scan each row of a particular column and return the number of available slots
+    // function to scan rows of column and return number of available slots
     function fillAvailableSlots(column, color, numOfSlots) {
         var numOfSlots = 0;
         for (var i = 0; i < row; i++) {
@@ -314,17 +312,17 @@ playGame();
               console.log('checkWinner ---> if statement')
                 setTimeout(function(){
                   alert ('Blue Wins!');
-                }, 250);
+                });
 
                 
             }
-            //if statement that checks if red has a sequence in any row
+            // if red sequence in any row
             if (circles[i][j].hasClass('red') && circles[i][j+1].hasClass('red') && circles[i][j+2].hasClass('red') && circles[i][j+3].hasClass('red'))
             {
                 console.log('checkWinner ---> if statement')
                 setTimeout(function(){
                   alert ('Red Wins!');
-                }, 250);
+                });
             }
           }
         }
@@ -354,16 +352,19 @@ playGame();
         //scan diagonal
         for (var i = 0; i < 2; i++) {
             for (var j = 0; j < 3; j++) {
+
                 //if statement = blue completes a diagonal of 4 in a row
                 if (circles[i][j].hasClass('blue') && circles[i+1][j+1].hasClass('blue') && circles[i+2][j+2].hasClass('blue') && circles[i+3][j+3].hasClass('blue') ||
                     circles[i][j+3].hasClass('blue') && circles[i+1][j+2].hasClass('blue') && circles[i+2][j+1].hasClass('blue') && circles[i+3][j].hasClass('blue'))
                 {
+
                     console.log('checkWinner ---> if statement')
                     setTimeout(function(){
                       alert ('Blue Wins!!!');
                     }, 250);
                 }
                 //if statement = red completes a diagonal of 4 in a row
+                
                 if (circles[i][j].hasClass('red') && circles[i+1][j+1].hasClass('red') && circles[i+2][j+2].hasClass('red') && circles[i+3][j+3].hasClass('red')||
                     circles[i][j+3].hasClass('red') && circles[i+1][j+2].hasClass('red') && circles[i+2][j+1].hasClass('red') && circles[i+3][j].hasClass('red'))
                 {
