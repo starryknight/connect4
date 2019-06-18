@@ -17,7 +17,6 @@ jQuery(function() {
   var players = [];
   var player1Score = 0;
   var player2Score = 0;
-
   
 
   // Player 1 start
@@ -304,10 +303,20 @@ playGame();
             //if statement that checks if blue has a sequence in any row
             if (circles[i][j].hasClass('blue') && circles[i][j+1].hasClass('blue') && circles[i][j+2].hasClass('blue') && circles[i][j+3].hasClass('blue'))
             {
-                console.log('checkWinner ---> if statement')
+                
+              // // var player1Score ++
+              //   player1Score ++
+              //    $('#player1 .score').val() = player1Score
+              //    console.log(player1Score)
+              //    console.log($('#player1 .score'))
+
+
+              console.log('checkWinner ---> if statement')
                 setTimeout(function(){
                   alert ('Blue Wins!');
                 }, 250);
+
+                
             }
             //if statement that checks if red has a sequence in any row
             if (circles[i][j].hasClass('red') && circles[i][j+1].hasClass('red') && circles[i][j+2].hasClass('red') && circles[i][j+3].hasClass('red'))
